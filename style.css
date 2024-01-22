@@ -302,6 +302,9 @@ section {
 .dropdownlist > ul > li{
     border-bottom: #ffffff 1px solid;
 }
+a {
+    color: #ffffff;
+}
 
 
 
