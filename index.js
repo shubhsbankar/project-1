@@ -58,19 +58,31 @@ lang.addEventListener("click",setLang);
 let counter = 0;
 prev.addEventListener("click",() => {
     counter--;
-    slideImages();
+    
+    if (Math.abs(counter) === slides.length)
+    {
+        counter = 0;
+    }
+    slideImages(true);
           
 });
 
 next.addEventListener("click",() => {
 
         counter++;
-    slideImages();
+    
+    if (Math.abs(counter) === slides.length)
+    {
+        counter = 0;
+    }
+    slideImages(false);
           
 });
 
-const slideImages = () => {
+const slideImages = (left) => {
+
+    const mutlipyer = left ? 100 : -100; 
     slides.forEach((slide) => {
-        slide.style.transform = `translateX(${counter * 100}%)`
+        slide.style.transform = `translateX(${counter * mutlipyer}%)`
     })
 }
